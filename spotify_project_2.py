@@ -1,22 +1,18 @@
 """Functions for Spotify"""
 import base64
-import os
 import json
-import folium
 import pycountry
 from dotenv import load_dotenv
 import requests
-from geopy.extra.rate_limiter import RateLimiter
-from geopy.exc import GeocoderUnavailable
-from geopy.geocoders import Nominatim
 
 load_dotenv()
 
-client_id = os.getenv('CLIENT_ID')
-client_secret = os.getenv('CLIENT_SECRET')
+client_id = '256f50561c9440cabffa7e004e4de104'
+client_secret = 'c2b3c093d96e4df080a67e3747929546'
 
 
 def get_token():
+    """Function that gets token"""
     auth_string = client_id + ':' + client_secret
     auth_bytes = auth_string.encode('utf-8')
     auth_base64 = str(base64.b64encode(auth_bytes), 'utf-8')
@@ -34,10 +30,12 @@ def get_token():
 
 
 def get_auth_header(token):
+    """Function that gets authorization header"""
     return {'Authorization': 'Bearer ' + token}
 
 
 def search_for_artist(token, artist_name):
+    """Function that searches for artist"""
     url = 'https://api.spotify.com/v1/search'
     headers = get_auth_header(token)
     query = f'?q={artist_name}&type=artist&limit=1'
@@ -52,6 +50,7 @@ def search_for_artist(token, artist_name):
 
 
 def search_for_track(token, track_name):
+    """Function rhat searches for track"""
     url = 'https://api.spotify.com/v1/search'
     headers = get_auth_header(token)
     query = f'?q={track_name}&type=track&limit=1'
@@ -64,6 +63,7 @@ def search_for_track(token, track_name):
     return json_result[0]
 
 def get_songs_by_artist(token, artist_id):
+    """Function that gets songs by artist"""
     url = f'https://api.spotify.com/v1/artists/{artist_id}/top-tracks?country=UA'
     headers = get_auth_header(token)
     result = requests.get(url, headers=headers)
@@ -71,6 +71,7 @@ def get_songs_by_artist(token, artist_id):
     return json_result
 
 def available_market_function(artist_name):
+    """Function that returns available market by song"""
     token = get_token()
     result = search_for_artist(token, artist_name)
     artist_id = result['id']
