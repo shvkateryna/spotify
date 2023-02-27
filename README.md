@@ -18,7 +18,7 @@ My program provides information about your favorite artist such as:
 <h2>Example:</h2>
 <img width="597" alt="Знімок екрана 2023-02-27 о 16 25 49" src="https://user-images.githubusercontent.com/116515521/221589959-f12d217b-347a-4a3f-ba23-e22eda195503.png">
 <img width="643" alt="Знімок екрана 2023-02-27 о 16 26 39" src="https://user-images.githubusercontent.com/116515521/221589999-14bf2ef9-e885-43ad-b04b-c0fc7acbd311.png">
-# Spotify. Map with markers where listening to song is permitted. Task 2
+<h1>Spotify. Map with markers where listening to song is permitted. Task 2</h1>
 My program generates the map with markers where listening the most popular song typed artist is permitted.
 <h2> Instruction </h2>
 <ol>
