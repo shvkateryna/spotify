@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Spotify map</title>
+    <style>
+        body {
+            background-color:#f3e5ab;
+        }
+        label {
+            font-family: Arial;
+            font-size: 45px;
+            display: flex;
+            color:#371d10;
+            margin: auto;
+            justify-content: center;
+            margin-top: 20px;
+            
+        }
+        form {
+            position:absolute;
+            top:50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #c68e17;
+            border-radius: 14px;
+            width:600px;
+            height: 220px;
+            margin: auto;
+        }
+        .first {
+            height: 30px;
+            width: 500px;
+            margin-top: 10px;
+            font-size: 27px;
+            font-family: Arial;
+            color: #371d10;
+        }
+        .button {
+            width: 300px;
+            height: 40px;
+            background-color: #f3e5ab;
+            border-radius: 14px;
+            border-color: #371d10;
+            font-size: 27px;
+            font-family: Arial;
+            color: #371d10;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <form action="/result" method="POST">
+        <center>
+        <label for="Назва виконавця">Введи імʼя виконавця:</label>
+        <p><input class='first' type="text" name="name" id="name"></p>
+        <input class='button'type="submit">
+        </center>
+    </form>
+    
+</body>
+</html>
